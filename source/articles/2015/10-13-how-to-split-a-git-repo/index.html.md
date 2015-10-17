@@ -12,8 +12,6 @@ I am learning web development at an *amazing* bootcamp by [Tealeaf Academy][tl] 
 
 Now, how do I do this without losing the commits history? Just moving the files to a new folder and doing `git init` there wouldn't help. I dug around and discovered a rather new `git subtree` command that did most of the trick. I wrote this step-by-step guide in case I ever need to go through this hassle again...
 
-<!-- READMORE -->
-
 1. Go to the old repo folder and split a sub-folder into a separate branch:
 
     ~~~console

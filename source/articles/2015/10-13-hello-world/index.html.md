@@ -16,8 +16,6 @@ I will share my journey here with you, world. I will expose the dead ends and ho
 
 **My path will definitely include:**
 
-<!-- more -->
-
 1. Ruby, Sinatra, Ruby on Rails
 2. Testing with Minitest, RSpec, factory_girl, capibara
 3. JavaScript, jQuery and CoffeeScript

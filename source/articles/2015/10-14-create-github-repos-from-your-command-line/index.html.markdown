@@ -18,7 +18,7 @@ Often this means you need to create a new GitHub repo every couple of days, some
 
     !!! Put down or copy the token (the long line of gibberish that will get generated). You only get one chance to do this and will never be shown the token agan.
 
-    ![GitHub tokens](/images/posts/github-token.png)
+    ![GitHub tokens](github-token.png)
 
 2. Create a local folder and git repo for the new project
 

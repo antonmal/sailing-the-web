@@ -6,7 +6,7 @@ comments: true
 categories: git
 ---
 
-<img src="/images/posts/mitosis.jpg">
+![Spinnig off](mitosis.jpg)
 
 I am learning web development at an *amazing* bootcamp by [Tealeaf Academy][tl] and accumulated a lot of micro-projects in subfolders of one giant repository. This was OK at first. But as soon as I graduated to building larger apps, they started crying for their own repos.
 

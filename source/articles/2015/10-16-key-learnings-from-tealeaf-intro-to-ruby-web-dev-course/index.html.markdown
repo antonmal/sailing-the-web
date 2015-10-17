@@ -5,9 +5,9 @@ date: 2015-10-16 14:48 UTC
 tags: tealeaf
 ---
 
-<img src="/images/posts/car-mirror.jpg">
+![Looking back](car-mirror.jpg)
 
-"Learn to code" movement has grown into something huge globally. Millions started coding for fun through nicely designed online courses from the likes of Codecademy, Treehouse or Code School. I enjoyed going through many of those over the last year. They allowed me to pick up basic concepts and syntax of many modern languages and frameworks. They helped bring back wonderful memories of how much I enjoyed coding at the age of 14-16 and inspired me to crave for more: to learn how professional developers work on real world projects and to become one myself. Luckily, just the moment I made this decision, a random newsletter from [Michael Hartl][mh] ended up in my inbox. He highly praised the [Tealeaf Academy][tl] bootcamps, so I decided to give them a try. And I could not be happier about the result.
+!!! *"Learn to code"* movement has grown into something huge globally. Millions started coding for fun through nicely designed online courses from the likes of Codecademy, Treehouse or Code School. I enjoyed going through many of those over the last year. They allowed me to pick up basic concepts and syntax of many modern languages and frameworks. They helped bring back wonderful memories of how much I enjoyed coding at the age of 14-16 and inspired me to crave for more: to learn how professional developers work on real world projects and to become one myself. Luckily, just the moment I made this decision, a random newsletter from [Michael Hartl][mh] ended up in my inbox. He highly praised the [Tealeaf Academy][tl] bootcamps, so I decided to give them a try. And I could not be happier about the result.
 
 [mh]: https://www.railstutorial.org/
 [tl]: https://www.gotealeaf.com

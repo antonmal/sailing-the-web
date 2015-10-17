@@ -8,7 +8,7 @@ footer: true
 categories:
 ---
 
-<img src="/images/posts/path.jpg">
+![The jorney begins](path.jpg)
 
 I am on a journey. As an apprentice. Of the not-so-ancient art of web app development.
 

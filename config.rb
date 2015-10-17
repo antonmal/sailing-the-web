@@ -8,9 +8,9 @@ activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
 
-  # blog.permalink = "{year}/{month}/{day}/{title}.html"
+  blog.permalink = "{year}/{month}/{day}/{title}/index.html"
   # Matcher for blog source files
-  blog.sources = "articles/{year}-{month}-{day}-{title}.html"
+  blog.sources = "articles/{year}/{month}-{day}-{title}/index.html"
   blog.taglink = "tag/{tag}.html"
   # blog.layout = "layout"
   # blog.summary_separator = /(READMORE)/
@@ -18,7 +18,7 @@ activate :blog do |blog|
   # blog.year_link = "{year}.html"
   # blog.month_link = "{year}/{month}.html"
   # blog.day_link = "{year}/{month}/{day}.html"
-  # blog.default_extension = ".markdown"
+  blog.default_extension = ".md"
 
   blog.tag_template = "tag.html"
   # blog.calendar_template = "calendar.html"
@@ -35,8 +35,8 @@ set :casper, {
     name: 'Sailing the Web',
     description: 'Journey of a web development apprentice',
     date_format: '%d %B %Y',
-    navigation: true,
-    logo: nil # Optional
+    navigation: false,
+    logo: 'avatar.png' # Optional
   },
   author: {
     name: 'Anton Malkov',

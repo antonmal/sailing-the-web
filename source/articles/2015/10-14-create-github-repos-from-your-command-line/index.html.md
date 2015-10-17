@@ -4,10 +4,10 @@ title: "Create GitHub repos from the terminal"
 date: 2015-10-14 12:03:08 +0200
 comments: true
 categories: git
-image: 'github.jpg'
+image: 'github-blackboard.jpg'
 ---
 
-![GitHub blackboard](github.jpg)
+![GitHub blackboard](github-blackboard.jpg)
 
 **"Repetition is the mother of skill."** When you learn web development, you need to expose yourself to the same tasks over and over again. This is how the skills get ingrained in your muscle memory. This includes working on a multitude of different projects one after another to develop your problem solving skills and simply train yourself to create projects from scratch.
 

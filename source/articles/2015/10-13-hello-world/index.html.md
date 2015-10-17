@@ -5,10 +5,11 @@ date: 2015-10-13 16:18:01 +0200
 comments: true
 sharing: true
 footer: true
-categories:
+categories: tealeaf
+image: 'path.jpg'
 ---
 
-![The jorney begins](path.jpg)
+![The journey begins](path.jpg)
 
 I am on a journey. As an apprentice. Of the not-so-ancient art of web app development.
 

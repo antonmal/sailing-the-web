@@ -1,14 +1,17 @@
 ---
 layout: post
-title: "Create GitHub repos from your command line"
+title: "Create GitHub repos from the terminal"
 date: 2015-10-14 12:03:08 +0200
 comments: true
 categories: git
+image: 'github.jpg'
 ---
 
-Repetition is the mother of skill. When you learn web development, you need to expose yourself to the same tasks over and over again. This is how the skills get ingrained in your muscle memory. This includes working on a multitude of different projects one after another to develop your problem solving skills and simply train yourself to create projects from scratch.
+![GitHub blackboard](github.jpg)
 
-Often this means you need to create a new GitHub repo every couple of days, sometimes even hours. After going to GitHub website many times to create a new repo, then copy the link, then go back to the terminal, etc, it started to feel like too much hassle. Being as lazy as I am, I wanted to create these little repos without leaving the command line. I tried to find a git command to do this, but obviously GitHub is not really a part of git, so no such command exists. Then I realized that you can use the command line to send requests to the GitHub API, and the rest fell into place. Here is how you can do this:
+**"Repetition is the mother of skill."** When you learn web development, you need to expose yourself to the same tasks over and over again. This is how the skills get ingrained in your muscle memory. This includes working on a multitude of different projects one after another to develop your problem solving skills and simply train yourself to create projects from scratch.
+
+Often this means you need to create a new GitHub repo every couple of days, sometimes even hours. After going to GitHub website many times to create a new repo, then copy the link, then go back to the terminal, etc, it started to feel like too much hassle. Being as lazy as I am, **I wanted to create these little repos without leaving the command line**. I tried to find a git command to do this, but obviously GitHub is not really a part of git, so no such command exists. Then I realized that you can use the command line to send requests to the GitHub API, and the rest fell into place. Here is how you can do this:
 
 1. Get your personal API token from GitHub
 

@@ -14,7 +14,7 @@ activate :blog do |blog|
   blog.taglink = "tag/{tag}.html"
   # blog.layout = "layout"
   # blog.summary_separator = /(READMORE)/
-  blog.summary_length = 400
+  blog.summary_length = 450
   # blog.year_link = "{year}.html"
   # blog.month_link = "{year}/{month}.html"
   # blog.day_link = "{year}/{month}/{day}.html"
@@ -31,7 +31,7 @@ end
 
 set :casper, {
   blog: {
-    url: 'http://antonmal.github.io',
+    url: 'http://www.antonmalkov.com',
     name: 'Sailing the Web',
     description: 'Journey of a web development apprentice',
     date_format: '%d %B %Y',
@@ -40,8 +40,8 @@ set :casper, {
   },
   author: {
     name: 'Anton Malkov',
-    bio: nil, # Optional
-    location: nil, # Optional
+    bio: 'Serial entrepreneur turned web developer', # Optional
+    location: 'Barcelona, Spain', # Optional
     website: nil, # Optional
     gravatar_email: nil, # Optional
     twitter: nil # Optional

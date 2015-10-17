@@ -4,9 +4,10 @@ title: "How to split a git repo"
 date: 2015-10-13 17:29:59 +0200
 comments: true
 categories: git
+image: 'mitosis.jpg'
 ---
 
-![Spinnig off](mitosis.jpg)
+![Spinning off](mitosis.jpg)
 
 I am learning web development at an *amazing* bootcamp by [Tealeaf Academy][tl] and accumulated a lot of micro-projects in subfolders of one giant repository. This was OK at first. But as soon as I graduated to building larger apps, they started crying for their own repos.
 

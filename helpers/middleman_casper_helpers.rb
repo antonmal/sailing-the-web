@@ -1,5 +1,6 @@
 require 'ostruct'
 require 'digest/md5'
+require 'pry'
 
 module MiddlemanCasperHelpers
   def page_title
@@ -35,7 +36,16 @@ module MiddlemanCasperHelpers
 
   def summary(article)
     summary_length = article.blog_options[:summary_length]
-    strip_tags(article.summary(summary_length, ''))
+    smry = ''
+    if article.data["image"]
+      y = article.date.year
+      m = article.date.month
+      d = article.date.day
+      t = article.slug
+      img_src = "/articles/" + "#{y}/#{m}-#{d}-#{t}/" + article.data["image"]
+      smry += '<img class="callout" src="' + img_src + '" />'
+    end
+    smry += strip_tags(article.summary(summary_length, ''))
   end
 
   def read_next_summary(article, words)

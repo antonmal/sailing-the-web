@@ -5,11 +5,9 @@ source 'http://rubygems.org'
 gem 'middleman', '~> 3.4.0'
 gem 'middleman-blog', '~> 3.5.3'
 gem 'middleman-deploy', '~> 1.0'
+gem 'middleman-livereload', '~> 3.4.3'
 gem 'rack-contrib'
-
-group :development do
-  gem 'middleman-livereload', '~> 3.4.3'
-end
+gem 'pry'
 
 # For feed.xml.builder
 gem 'builder', '~> 3.2.2'

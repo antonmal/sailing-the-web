@@ -1,0 +1,17 @@
+@import 'vendor/casper';
+@import 'syntax';
+
+// Overwrite some styles from casper.css
+pre.highlight {
+  word-wrap: normal;
+  code {
+    white-space: pre;
+  }
+}
+
+// img.callout {
+//   float: right;
+//   margin: 0 0 10px 10px;
+//   max-width: 50%;
+//   min-width: 35%;
+// }

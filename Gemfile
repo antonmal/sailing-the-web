@@ -9,6 +9,9 @@ gem 'middleman-livereload', '~> 3.4.3'
 gem 'rack-contrib'
 gem 'pry'
 
+# Support Disqus comments
+gem 'middleman-disqus'
+
 # For feed.xml.builder
 gem 'builder', '~> 3.2.2'
 
@@ -18,3 +21,6 @@ gem 'redcarpet', '~> 3.3.2'
 
 # For "summary"-Helper
 gem 'nokogiri', '~> 1.6.6.2'
+
+# Faster Web server for Heroku
+gem 'puma'

@@ -4,6 +4,26 @@
 
 # Time.zone = "UTC"
 
+# Deploy settings
+# activate :deploy do |deploy|
+#   deploy.method = :git
+#   # Optional Settings
+#   deploy.remote   = 'git@github.com:antonmal/sailing-the-web.git' # remote name or git url, default: origin
+#   deploy.branch   = 'master' # default: gh-pages
+#   # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
+#   # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
+# end
+
+activate :deploy do |deploy|
+  deploy.method = :git
+  # Optional Settings
+  deploy.remote   = 'https://git.heroku.com/sailing-the-web.git' # remote name or git url, default: origin
+  deploy.branch   = 'master' # default: gh-pages
+  # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
+  # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
+  # deploy.build_before = true # default: false
+end
+
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
@@ -27,6 +47,11 @@ activate :blog do |blog|
   blog.paginate = true
   blog.per_page = 10
   # blog.page_link = "page/{num}"
+end
+
+# Support Disqus comments to posts
+activate :disqus do |d|
+  d.shortname = "sailingtheweb"
 end
 
 set :casper, {

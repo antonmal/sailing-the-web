@@ -3,7 +3,10 @@ layout: post
 title: How to use long strings in Ruby
 date: 2015-10-18 20:11 UTC
 tags: ruby
+image: 'long-bridge.jpg'
 ---
+
+![Endless bridge](long-bridge.jpg)
 
 I really like to keep my code neat and up to the standards of [Ruby Style Guide][ruby-style] and the [Rubocop][rubocop] code validator. This includes keeping the lines of code limited to 80 characters. But sometimes it's just not possible. What's best to do in this case?
 

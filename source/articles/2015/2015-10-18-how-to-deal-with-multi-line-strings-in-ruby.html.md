@@ -111,7 +111,7 @@ Value: ```"Lorem ipsum dolor sit amet,     consectetur       adipisicing elit, s
 
 ### Ask ```%w()``` for help?
 
-The next, slightly unconventional approach actually worked (kind of). Notice the ```%w``` construct that breaks the string into array of words and the ``` * ' '``` array operator that joins it back together into string with a ' ' between each word (equivalent to ```.join(' ')```):
+The next, slightly unconventional approach actually worked (kind of). Notice the ```%w``` construct that breaks the string into array of words and the ``` * ' '``` array operator that joins it back together (equivalent to ```.join(' ')```):
 
 ~~~ruby
 {
@@ -129,7 +129,7 @@ The next, slightly unconventional approach actually worked (kind of). Notice the
 
 Value: ```"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod magna aliqua. \\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate."```
 
-As you can see, this approach works unless in the string contains escape characters like ```\n``` or more than one space between some words. What else can I do?
+As you can see, this approach works unless in the string contains escape characters like ```\n``` or more than one space between some words. Not good. What else can I do?
 
 ### Use heredocs?
 
@@ -155,11 +155,11 @@ I tried using so-called ['heredocs'][heredocs], which are basically named text d
 
 Value: ```"        Lorem ipsum dolor sit amet,     consectetur\n        adipisicing elit, sed do eiusmod magna aliqua. \nUt enim\n        ad minim veniam, quis nostrud exercitation ullamco laboris\n        nisi ut aliquip ex ea commodo consequat. Duis aute irure\n        dolor in reprehenderit in voluptate.\n"```
 
-The extra new lines and tabs are back again. Plus some extra space in the front and another new line in the end. And some ugly not-quite-Ruby syntax. What's next?
+The extra new lines and tabs are back again. Plus some extra space at the front and another new line at the end. And some ugly not-quite-Ruby syntax. What's next?
 
 ### Write a method?
 
-I found a [solution][strip-heredoc] to somewhat similar problem in Rails, which involved creating a custom method to remove the extra indentation from inside the string. I tried to apply the same general approach and wrote a Ruby (non-Rails) method:
+I found a [solution][strip-heredoc] to somewhat similar problem in Rails, which involved creating a custom method to remove the extra indentation from inside the string. I tried to apply the same general approach and wrote my own Ruby (non-Rails) method:
 
 [strip-heredoc]: http://apidock.com/rails/String/strip_heredoc
 
@@ -209,7 +209,7 @@ One other option:
 
 Value: ```"Lorem ipsum dolor sit amet,     consecteturadipisicing elit, sed do eiusmod magna aliqua. \nUt enimad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate."```
 
-This is a workable solution. Quite a lot of hassle putting each line in quotes. But, there is a shortcut for that. In Sublime or Atom you can work on several lines at once. I use (and love) [Atom][atom] and there you can select all lines and press 'Shift-Cmd-L' to enclose each of them in ```'``` and then add ```,``` at the end.
+This is a workable solution. Quite a lot of hassle putting each line in quotes. But, there is a shortcut for that. In Sublime or Atom you can work on several lines at once. I use (and love) [Atom][atom] and there you can selecta and unindent all lines, press 'Shift-Cmd-L', then enclose each of them in ```'``` and add ```,```'s at the ends, then indent the lines back.
 
 [atom]: https://atom.io/
 
@@ -234,6 +234,8 @@ If you need to add quotes to each line, why use arrays at all? Plainly joining p
 
 Value: ```"Lorem ipsum dolor sit amet,     consecteturadipisicing elit, sed do eiusmod magna aliqua. \nUt enimad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate."```
 
+That actually looks fine. But again, a lot of manual work if you have many of those text blocks or if you have to change some of them regularly and thus, put them back together and then re-split into different lines again.
+
 ### Use modern editors to avoid the problem altogether?
 
 If you can be sure that your team only uses good code editors like [Sublime][subl] or [Atom][atom], they can be tweaked to support the needed auto-indentation effect without breaking the text into several lines and tabbing them. You can achieve that by turning word wrap on and setting the threshold to 80 characters. [Sublime][subl] does a good job of this:
@@ -251,7 +253,7 @@ ___
 Unexpectedly, this post ran very long. You may say that I went into too much trouble to solve a tiny, even imaginary problem. But, I do hope that one or two approaches or syntax options were new for you and that you will use those with much greater gain in your projects.
 
 It would be nice for Ruby to have a special construct similar to ```%()```, for example ```%untab()``` or ```%u()``` for short, to tell it that the following tabbed lines should be concatenated together stripping the extra indentation. Without such construct, none of the above solutions are perfect, but the last 4 of them are quite usable.
-
+___
 > What approach do / would you use?
 
 > Did I miss any?

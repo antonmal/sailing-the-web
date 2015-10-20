@@ -129,7 +129,7 @@ The next, slightly unconventional approach actually worked (kind of). Notice the
 
 Value: ```"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod magna aliqua. \\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate."```
 
-As you can see, this approach works unless in the string contains escape characters like ```\n``` or more than one space between some words. Not good. What else can I do?
+As you can see, this approach works unless the string contains escape characters like ```\n``` or more than one space between some words. Not good. What else can I do?
 
 ### Use heredocs?
 
@@ -238,7 +238,7 @@ That actually looks fine. But again, a lot of manual work if you have many of th
 
 ### Use modern editors to avoid the problem altogether?
 
-If you can be sure that your team only uses good code editors like [Sublime][subl] or [Atom][atom], they can be tweaked to support the needed auto-indentation effect without breaking the text into several lines and tabbing them. You can achieve that by turning word wrap on and setting the threshold to 80 characters. [Sublime][subl] does a good job of this:
+If you can be sure that your team only uses good code editors like [Sublime][subl] or [Atom][atom], they can be tweaked to support the needed auto-indentation effect without you breaking the text into several lines and tabbing them. You can achieve that by turning word wrap on and setting the threshold to 80 characters. [Sublime][subl] does a good job of this:
 
 [subl]: http://www.sublimetext.com/
 
@@ -250,9 +250,9 @@ If you can be sure that your team only uses good code editors like [Sublime][sub
 ___
 ## CONCLUSION
 
-Unexpectedly, this post ran very long. You may say that I went into too much trouble to solve a tiny, even imaginary problem. But, I do hope that one or two approaches or syntax options were new for you and that you will use those with much greater gain in your projects.
+Unexpectedly, this post ran very long. You may say that I went into too much trouble to solve a tiny, even imaginary problem. But, I do hope that one or two approaches or syntax options were new to you and that you will use those in other ways with much greater gain.
 
-It would be nice for Ruby to have a special construct similar to ```%()```, for example ```%untab()``` or ```%u()``` for short, to tell it that the following tabbed lines should be concatenated together stripping the extra indentation. Without such construct, none of the above solutions are perfect, but the last 4 of them are quite usable.
+It would be nice for Ruby to have a special construct similar to ```%()```, for example ```%untab()``` (or ```%u()``` for short), to tell it that the following tabbed lines should be concatenated together stripping the extra indentation. Without such construct, none of the above solutions are perfect, but the last 4 of them are quite usable.
 ___
 > What approach do / would you use?
 

@@ -2,8 +2,7 @@
 layout: post
 title: "How to split a git repo"
 date: 2015-10-13 17:29:59 +0200
-comments: true
-categories: git
+tags: git
 image: 'mitosis.jpg'
 ---
 

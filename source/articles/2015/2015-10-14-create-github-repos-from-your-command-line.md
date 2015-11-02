@@ -2,8 +2,7 @@
 layout: post
 title: "Create GitHub repos from the terminal"
 date: 2015-10-14 12:03:08 +0200
-comments: true
-categories: git
+tags: git
 image: 'github-blackboard.jpg'
 ---
 

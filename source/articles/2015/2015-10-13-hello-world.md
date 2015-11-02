@@ -2,10 +2,7 @@
 layout: post
 title: "Hello, world!"
 date: 2015-10-13 16:18:01 +0200
-comments: true
-sharing: true
-footer: true
-categories: tealeaf
+tags: tealeaf
 image: 'path.jpg'
 ---
 

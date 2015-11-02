@@ -14,3 +14,13 @@ img.callout {
   margin: 10px;
   max-width: 45%;
 }
+
+a.post-tag {
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px dotted;
+  &:hover {
+    text-decoration: none;
+    border: none;
+  }
+}

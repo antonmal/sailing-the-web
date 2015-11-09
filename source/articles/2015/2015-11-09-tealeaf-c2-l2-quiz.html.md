@@ -17,11 +17,11 @@ Once again, I am posting my answers to the [Tealeaf][tl] 2nd Course as a cheatsh
     | path name      | method         | path           | controller#action |
     |:---------------|:---------------|:---------------|:------------------|
     | posts          | GET            | /posts         | posts#index       |
-    | new_post_path  | GET            | /posts/new     | posts#new         |
+    | new\_post\_path| GET            | /posts/new     | posts#new         |
     |                | POST           | /posts         | posts#create      |
-    | edit_post_path | GET            | /posts/:id/edit| posts#edit        |
+    |edit\_post\_path| GET            | /posts/:id/edit| posts#edit        |
     |                | PATCH/PUT      | /posts/:id     | posts#update      |
-    | post_path      | GET            | /posts/:id     | posts#show        |
+    | post\_path     | GET            | /posts/:id     | posts#show        |
     |                | DELETE         | /posts/:id     | posts#destroy     |
 
 2. What is REST and how does it relate to the resources routes?

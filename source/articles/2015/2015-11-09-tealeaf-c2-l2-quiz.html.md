@@ -40,7 +40,7 @@ Once again, I am posting my answers to the [Tealeaf][tl] 2nd Course as a cheatsh
 
     Model backed form helpers are tied to an object and only allow field names that correspond to attributes or virtual attributes (for example, collections associated with this objects) of that object.
 
-4. How does form_for know how to build the <form> element?
+4. How does form_for know how to build the ```form``` element?
 
     The method checks if the object exist in the database already or it's a new object and displays a corresponding form (in the way described in the previous answer).
 
@@ -53,7 +53,7 @@ Once again, I am posting my answers to the [Tealeaf][tl] 2nd Course as a cheatsh
       - if it passes all the validations, then we record a notice in the session (via ```flash[:notice]``` saying that the object was saved (or updated) successfully and then redirect to corresponding page (that object's 'show' page or the 'index' page where all object are listed).
       - if not, we render the template containing the form once again and there display the errors that occurred during validation.
 
-      Here is how it looks in the code:
+    Here is how it looks in the code:
 
     ```ruby
     def create

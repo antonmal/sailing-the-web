@@ -114,7 +114,7 @@ Once again, I am posting my answers to the [Tealeaf][tl] 2nd Course as a cheatsh
 
 7. What are Rails helpers?
 
-    Helpers are methods that can be used by the views templates. Typically we extract into the helpers the logic and formatting of bits of information that are needed multiple times in different views. Thus they help keep the code DRY and avoid repetition.
+    Helpers allow us to consolidate our application logic and complicated formatting for small bits of information (not long HTML blocks) and use the methods in the views without convoluting them with the logic code. Typically helpers are placed into the ```application_helpers.rb``` file that is available application-wide for all views. Helpers are typically reused multiple times in different parts of the application.
 
 8. What are Rails partials?
 

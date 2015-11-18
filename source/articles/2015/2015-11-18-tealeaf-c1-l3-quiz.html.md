@@ -8,13 +8,13 @@ image: tealeaf.png
 
 ![Tealeaf Academy](tealeaf.png)
 
-Quiz: Lesson 3
-
 1. What's the difference between rendering and redirecting? What's the impact with regards to instance variables, view templates?
 
-    Rendering means sending HTTP response that contains HTML (or other) code that the client (browser) can display or otherwise use. In other words, we render one of the view templates and send it back to the browser to be displayed. Instance variables created when we received the current request are available in view templates.
+    When a Rails app gets an HTTP request, the router (```routes.rb```) determines which controller+action should generate the HTTP response. Within that action we define the instance variables and then either render a view template or redirect the request to another URL.
 
-    Redirecting means telling the browser that it needs to make another request (to a different url). Instance variables created when the current request was received are lost, because they are only available within the current request; when the new request comes (after redirect), all instance variables will need to be re-created again.
+    In Rails rendering means sending back an HTTP response with HTML/JS/JSON content generated based on a view template. The instance variables that we defined in the action are available for the view template.
+
+    Redirecting means telling the browser to make a new request to a different url. Because the HTTP protocol is stateless, instance variables defined in the current action are lost during redirect and are no longer available when the new request comes.
 
 2. If I need to display a message on the view template, and I'm redirecting, what's the easiest way to accomplish this?
 
@@ -26,22 +26,23 @@ Quiz: Lesson 3
 
 4. Explain how we should save passwords to the database.
 
-    We should never store passwords directly in a database. Instead, we should store an encripted password hash (digest) that is generated with a library like ```bcrypt-ruby``` gem in a way that does not allow decripting the hash back into the password. Instead, when we need to authorize a user, we ask him to enter his password, then encript it and compare the resulting hash with the one we have in our database.
+    We should never store passwords directly in a database. Instead, we should store an encrypted password hash (digest) that is generated with a library like ```bcrypt-ruby``` gem in a way that does not allow decrypting the hash back into the password. Instead, when we need to authorize a user, we ask him to enter his password, then encrypt it and compare the resulting hash with the one we have in our database.
 
     Mode specifically, we can use the ```has_secure_password :password_field``` method in the model. In that case, the database for this model should contain the ```password_field_digest``` attribute, where the password hash will be stored. This will give the corresponding object the following methods:
-
-        - ```.password=``` setter method (that will encript the password into a hash)
-        - and the ```.authenticate(password)``` that takes the ```password```, turns it into a hash and compares that with the hash stored in our database. If they are equal, the entered password is correct, and the method returns ```true```; otherwise it returns ```false```.
+    * ```.password=``` setter method (that will encrypt the password into a hash)
+    * and the ```.authenticate(password)``` that takes the ```password```, turns it into a hash and compares that with the hash stored in our database. If they are equal, the entered password is correct, and the method returns ```true```; otherwise it returns ```false```.  
 
 5. What should we do if we have a method that is used in both controllers and views?
 
-    We should declare the method in the ```application_controller.rb```, this will make it available to all controllers. Then, we should make the method available to all views by adding this line to the same file: ```helper_method: :your_method_name```.
+    It depends on what that method does:
+    * If it is about business logic or data manipulation, then the best place for it is in the model file (```/models/object_name.rb```). In general, this is the preferred approach ('Fat model, thin controller').
+    * If it is a helper method used primarily by a controller, then it can be defined in the controller file itself. If it is used by multiple controllers, it should go into ```application_controller.rb```. If it is also needed in the views, we can make it available by adding this line: ```helper_method: :your_method_name```.
 
 6. What is memoization? How is it a performance optimization?
 
-    Memoization look like this: ```@foo ||= Foo.find(params[:id])```, which means: 'if ```@foo``` variable has not been defined yet, then set it equal to a specific value from the database, otherwise use the current value of that variable (and do not go to the database again)'. It optimizes performance because it prevents unnecessary requests to the database (which take a lot of resources/time).
+    Memoization looks like this: ```@foo ||= <statement...>```, which means: 'if ```@foo``` variable has not been defined yet, then evaluate the expression behind the ```||=``` operator (send a request to a database, do some data manipulation, calculations, etc), otherwise use the current value of that variable.'. It optimizes performance because the expression is evaluated only once (and the evaluation often takes a lot of time and resources, especially if we send requests to the database).
 
-    More generally, memoization allows us to enhance performance because we are caching the result of a method call instead of calling it every single time. This is a good technique whenever the result is the same every time. Instead of running the method and hitting the database every time per request, we can store the first result as an instance variable. By doing so, it will initially hit the database only once to get the stored valued and will optimize our performance since we can refer to the instance variable instead of calling the method again.
+    In other words, memoization allows us to enhance performance because we are caching the result of a method call instead of calling it every single time. This is a good technique whenever the result is the same every time. Instead of running the method and hitting the database every time per request, we can store the first result as an instance variable. By doing so, it will initially hit the database only once to get the stored values and will optimize our performance since we can refer to the instance variable instead of calling the method again.
 
 7. If we want to prevent unauthenticated users from creating a new comment on a post, what should we do?
 
@@ -112,7 +113,7 @@ Quiz: Lesson 3
 
     ```ruby
     # /models/vote.rb
-    class Vote < ActiveRecord::base
+    class Vote < ActiveRecord::Base
       belongs_to :votable, polymorphic: true
     end
 
@@ -124,6 +125,6 @@ Quiz: Lesson 3
 
 10. What is an ERD diagram, and why do we need it?
 
-    ERD diagram is a 'Entity Relationsip Diagram', which shows entities (tables) in our database, attributes of each table, and, most importantly, relationships between different entities. A relationship is shown via a line connecting a the primary key attribute of one entity to a foreign key attribute of another entity. In on of the common ERD styles, arrow(s) are attached to the lines on the ```many``` side of the relationship to describe the different types of relationships (```1:1```, ```1:M```, ```M:M```).
+    ERD diagram is a 'Entity Relationship Diagram', which shows entities (tables) in our database, attributes of each table, and, most importantly, relationships between different entities. A relationship is shown via a line connecting a the primary key attribute of one entity to a foreign key attribute of another entity. In on of the common ERD styles, arrow(s) are attached to the lines on the ```many``` side of the relationship to describe the different types of relationships (```1:1```, ```1:M```, ```M:M```).
 
-    ERD diagram makes it easy to understand the relationships between the entities at a glance. It is much easier (and makes more sense) to work out the database structure by drawing the ERD diagram iteratively, rather than changing the models / database many all the time. Once the ERB is built, writing the migrations and models code is very easy.
+    ERD diagram makes it easy to understand the relationships between the entities at a glance. It is much easier (and makes more sense) to work out the database structure by drawing the ERD diagram iteratively, rather than changing the models / database many times. Once the ERB is drawn, writing the migrations and models code is very easy.

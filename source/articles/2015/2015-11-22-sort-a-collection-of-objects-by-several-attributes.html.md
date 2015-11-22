@@ -2,7 +2,7 @@
 layout: post
 title: "Sort a collection of objects by several attributes"
 date: 2015-11-22 19:25 UTC
-tags: ['rails', 'tealeaf']
+tags: ['ruby', 'rails', 'tealeaf']
 image: sorting.jpg
 ---
 
